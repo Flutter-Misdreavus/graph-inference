@@ -1,0 +1,35 @@
+# Graph-as-Code reproduction config for Arxiv dataset
+
+dataset:
+  node_csv: "Datas/Arxiv.csv"
+  processed_pkl: "Datas/arxiv_processed.pkl"
+  num_test_samples: 100
+  random_seed: 42
+
+llm:
+  # Provider options: deepseek, kimi, openai
+  provider: "deepseek"
+  # DeepSeek models: deepseek-chat, deepseek-reasoner
+  # Kimi models: kimi-latest, kimi-k2, kimi-k2-32k
+  model: "deepseek-chat"
+  base_url: "https://api.deepseek.com/v1"
+  api_key_env: "DEEPSEEK_API_KEY"
+  temperature: 0.1
+  max_tokens: 4096
+  retry: 3
+  backoff: 2.0
+
+# Example Kimi config (uncomment to use):
+# llm:
+#   provider: "kimi"
+#   model: "kimi-latest"
+#   base_url: "https://api.moonshot.cn/v1"
+#   api_key_env: "KIMI_API_KEY"
+#   temperature: 0.1
+#   max_tokens: 4096
+#   retry: 3
+#   backoff: 2.0
+
+logging:
+  log_dir: "logs"
+  verbose: false
