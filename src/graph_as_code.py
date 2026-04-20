@@ -10,7 +10,7 @@ from .llm_client import LLMClient
 
 
 MAX_STEPS = 15
-ANSWER_PATTERN = re.compile(r'Answer:\s*(\d+)', re.IGNORECASE)
+ANSWER_PATTERN = re.compile(r'Answer[\s:]+(\d+)', re.IGNORECASE)
 
 
 class GraphAsCodeAgent:
